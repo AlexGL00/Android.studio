@@ -1,6 +1,9 @@
 package com.AlexGL00.first;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -28,6 +31,8 @@ public class MainActivity2 extends AppCompatActivity {
             return insets;
         });
 
+        launchMain();
+
         Animation gradientColor = AnimationUtils.loadAnimation(this, R.anim.graddient_color);
         ImageView mainActivitylogo = findViewById(R.id.logoMainActivity2);
         TextView mainActivityName = findViewById(R.id.MainActivityAppName);
@@ -42,5 +47,21 @@ public class MainActivity2 extends AppCompatActivity {
                 .centerCrop()
                 .into(LideBackground);
 
+
+
+
     }
+
+    public void launchMain(){
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent( MainActivity2.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        }, 3000);
+    }
+
 }
