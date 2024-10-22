@@ -8,72 +8,113 @@
     tools:context=".Login">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/loginGlH1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintGuide_percent="3.3"
+        android:id="@+id/loginGLH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"
         />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/loginGlH2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintGuide_percent="3.3"
-        android:orientation="vertical"
-        />
-    <View
-    android:id="@+id/MainActivityGradient"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    android:alpha="0.6"
-
-    />
-
     <ImageView
         android:id="@+id/logoMainActivity2"
         android:layout_width="200dp"
-        android:layout_height="180dp"
+        android:layout_height="200dp"
         android:src="@drawable/_23"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/loginGlH1"
+        app:layout_constraintTop_toTopOf="@+id/loginGLH1"
 
         />
-
-
     <TextView
         android:id="@+id/loginAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoMainActivity2"
-        android:textSize="35sp"
-        android:textColor="@color/black"
+        android:textSize="40sp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/hauntress"
         />
-
     <com.google.android.material.textfield.TextInputLayout
-       android:id="@+id/loginUsernameTIL"
-        android:layout_width="0dp"
+        android:id="@+id/loginUsernameTIL"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/loginAppName"
-        app:layout_constraintEnd_toStartOf="@+id/loginGLV1"
-        app:layout_constraintEnd_toEndOf="@+id/loginGLV1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginAppName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:startIconDrawable="@drawable/ic_android_black_24dp"
         android:layout_marginTop="20dp"
         >
         <EditText
+            android:paddingStart="60dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Usuario"
+            android:layout_height="wrap_content"
+            android:hint="Usuario / Correo electronico"
             android:inputType="textPersonName"
-            />
-
+        />
     </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginPasswordnameTIL"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginUsernameTIL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:startIconDrawable="@drawable/baseline_key_24"
+        android:layout_marginTop="10dp"
+        app:endIconDrawable="@drawable/baseline_remove_red_eye_24"
+        app:endIconMode="password_toggle"
+
+
+        >
+        <EditText
+            android:paddingStart="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPersonName"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/ButtonTIL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginPasswordnameTIL"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:text="Acceder"
+        >
+    </Button>
+
+    <Button
+        android:id="@+id/loginRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonTIL"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="REGISTRARSE"
+        >
+    </Button>
+    <TextView
+        android:id="@+id/loginRecuperar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Recuperar contraseñas"
+        app:layout_constraintTop_toBottomOf="@+id/loginRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
